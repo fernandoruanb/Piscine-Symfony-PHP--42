@@ -1,7 +1,7 @@
 <?php
 	function capital_city_from(string $stateInput): ?string {
 		if ($stateInput === null)
-			return null;
+			return "Unknown" . PHP_EOL;
 
 		$states = [
    	                'Oregon' => 'OR',
@@ -18,12 +18,11 @@
 	        ];
 
 		if (!array_key_exists(trim($stateInput), $states))
-			return "Unknown";
+			return "Unknown" . PHP_EOL;
 		$capital = trim($capitals[$states[trim($stateInput)]]);
-		return $capital;
+		return $capital . PHP_EOL;
 	}
 
-	$result = capital_city_from("Oregon");
-	if ($result !== null)
-		echo $result . PHP_EOL;
+	/*echo capital_city_from("Oregon");
+	echo capital_city_from("Origan");*/
 ?>
